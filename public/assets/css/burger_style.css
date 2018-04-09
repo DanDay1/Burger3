@@ -1,12 +1,15 @@
 html {
- 	background-color: yellow;
+ 	background-color: black;
  }
 
 .container {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  background-color: green;
+}
+
+#containerBottom {
+	background-color: gray;
 }
 
  h1 {
@@ -14,6 +17,7 @@ html {
  	font-family: 'helvetica', times;
  	font-size: 65px;
  	margin: 50px;
+ 	color: orange;
  }
 
  h2 {
@@ -21,6 +25,7 @@ html {
  	font-family: 'helvetica', times;
  	font-size: 40px;
  	margin: 50px;
+ 	color: orange;
  }
 
 .burgerAvailable {
@@ -34,18 +39,37 @@ html {
  	padding: 10px;
  }
 
+ .burgerEaten {
+	font-family: 'helvetica', times;
+ 	font-size: 20px;
+ 	text-align: center;
+ 	border-radius: 25px;
+ 	width: 100%;
+ 	margin: 0;
+ 	padding: 10px;
+ }
+
+#name {
+	width:79%;
+	color: orange;
+}
+
+placeholder {
+		color: green;
+	}
+
  .addBurgerButton {
  	font-family: 'helvetica', times;
  	font-size: 20px;
  	text-align: center;
 
- 	border-radius: 25px;
- 	width: 100%;
+ 	/*border-radius: 25px;*/
+ 	width: 20%;
  	margin: 0;
  	padding: 10px;
- 	background-color: green;
+ 	background-color: gray;
  }
 
 .addBurgerButton:active {
-	background-color: green;
+	background-color: blue;
 }
