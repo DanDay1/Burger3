@@ -39,6 +39,16 @@ var orm = {
         });
     },
 
+    // deleteOne: function(table, cols, cals, cb) {
+    //     var queryStrong = 'DELETE FROM ' + table + 
+
+    //     console.log("deleted");
+
+    //     connection.query(queryString, vals, function(err, result) {
+    //         cb(result);
+    //     });
+    // }
+
     updateOne: function(table, objColVals, condition, cb) {
         var queryString = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition;
 

@@ -28,6 +28,10 @@ html {
  	color: orange;
  }
 
+ p {
+ 	text-align: center;
+ }
+
 .burgerAvailable {
 	font-family: 'helvetica', times;
  	font-size: 20px;
@@ -54,9 +58,6 @@ html {
 	color: orange;
 }
 
-placeholder {
-		color: green;
-	}
 
  .addBurgerButton {
  	font-family: 'helvetica', times;
