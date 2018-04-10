@@ -33,6 +33,8 @@ router.put('/burgers/:id', function(req, res) {
     });
 });
 
+// DELETE FROM `burgers_db`.`burgers` WHERE `id`='17';
+
 // router.put('/burgers/:id', function(req, res) {
 //     var condition = 'id = ' + req.params.id;
 
