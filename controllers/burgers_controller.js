@@ -33,6 +33,46 @@ router.put('/burgers/:id', function(req, res) {
     });
 });
 
+router.delete('/burgers/:id', function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  burger.delete(condition, function() {
+    res.redirect("/");
+  });
+});
+
+
+// API DELETE: components will use this to delete saved article in the database
+// router.post('/burgers/:id', function(req, res) {
+//     burger.remove(req.params.articleMongoId, function(err, todo) {
+//         if (err) {
+//             // Send Failure header
+//             console.log(err);
+//             res.sendStatus(400);
+//         } else {
+//             // Send Success header
+//             res.sendStatus(200);
+//         }
+//     });
+
+// });
+
+// API DELETE: components will use this to delete saved article in the database
+// router.post("/api/delete/:articleMongoId", function(req, res) {
+//     console.log(req.params.articleMongoId)
+//     Article.findByIdAndRemove(req.params.articleMongoId, function(err, todo) {
+//         if (err) {
+//             // Send Failure header
+//             console.log(err);
+//             res.sendStatus(400);
+//         } else {
+//             // Send Success header
+//             res.sendStatus(200);
+//         }
+//     });
+
+// });
+
 // DELETE FROM `burgers_db`.`burgers` WHERE `id`='17';
 
 // router.put('/burgers/:id', function(req, res) {
@@ -44,5 +84,7 @@ router.put('/burgers/:id', function(req, res) {
 //         res.redirect('/');
 //     });
 // });
+
+
 
 module.exports = router;

@@ -39,16 +39,6 @@ var orm = {
         });
     },
 
-    // deleteOne: function(table, cols, cals, cb) {
-    //     var queryStrong = 'DELETE FROM ' + table + 
-
-    //     console.log("deleted");
-
-    //     connection.query(queryString, vals, function(err, result) {
-    //         cb(result);
-    //     });
-    // }
-
     updateOne: function(table, objColVals, condition, cb) {
         var queryString = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition;
 
@@ -58,6 +48,62 @@ var orm = {
             cb(result);
         });
     }
+    // };
+
+
+        delete: function(table, cols, vals, cb) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+    }
 };
+
+//This was taken right from the sample code:
+//     delete: function(table, condition, cb) {
+//         var queryString = "DELETE FROM " + table;
+//         queryString += " WHERE ";
+//         queryString += condition;
+
+//         connection.query(queryString, function(err, result) {
+//             if (err) {
+//                 throw err;
+//             }
+
+//             cb(result);
+//         });
+//     }
+// };
+
+
+//     deleteOne: function(table, objColVals, condition, cb) {
+//         var queryString = 'DELETE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition;
+
+//         DELETE FROM `burgers_db`.`burgers` WHERE `id`='19';
+
+//         console.log("delete");
+
+//         connection.query(queryString, function(err, result) {
+//             cb(result);
+//         });
+//     }
+// };
+
+// deleteOne: function(table, cols, cals, cb) {
+//     var queryStrong = 'DELETE FROM ' + table + 
+
+//     console.log("deleted");
+
+//     connection.query(queryString, vals, function(err, result) {
+//         cb(result);
+//     });
+// }
 
 module.exports = orm;
