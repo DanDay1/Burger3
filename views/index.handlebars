@@ -40,8 +40,7 @@
             <div class='burgerEaten'>
               <div>
                {{!--  {{this.burger_name}} --}}
-               
-               <form action="/burgers/{{this.id}}?_method=DELETE" method="DELETE">
+               <form action="/burgers/{{this.id}}?_method=DELETE" method="POST">
                 <button type="submit" class='burgerEaten'> {{this.burger_name}}</button>
               </form>
               </div>

@@ -47,22 +47,27 @@ var orm = {
         connection.query(queryString, function(err, result) {
             cb(result);
         });
-    }
+    },
     // };
 
 
-        delete: function(table, cols, vals, cb) {
+        deleteOne: function(table, objColVals, condition, cb) {
+        console.log ("deleteOne branch: ");
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
-        queryString += condition;
+        // //condition = 'id = 1' ;
+        // // condition = 'id = ' + req.params.id;
+        // queryString += condition;
+        // // queryString += condition;
+        // console.log ("queryStrong: " + queryString);
 
-        connection.query(queryString, function(err, result) {
-            if (err) {
-                throw err;
-            }
+        // connection.query(queryString, function(err, result) {
+        //     if (err) {
+        //         throw err;
+        //     }
 
-            cb(result);
-        });
+        //     cb(result);
+        // });
     }
 };
 
