@@ -33,12 +33,11 @@ router.put('/burgers/:id', function(req, res) {
     });
 });
 
-router.delete('/burgers', function(req, res) {
+router.delete('/burgers/:id', function(req, res) {
   var condition = "id = " + req.params.id;
 
-  burger.deleteOne({
-        devoured: true
-    }, condition, function(data) {
+  burger.deleteOne( 
+    condition, function(data) {
     res.redirect("/");
   });
 });

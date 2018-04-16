@@ -52,22 +52,27 @@ var orm = {
 
 
         deleteOne: function(table, objColVals, condition, cb) {
-        console.log ("deleteOne branch: ");
+        console.log ("deleteOne branch 1: ");
+        console.log ("table : " + table);
+        console.log ("objColVals: " + objColVals);
+        console.log("condition: " + condition);
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
-        // //condition = 'id = 1' ;
-        // // condition = 'id = ' + req.params.id;
+        // condition = 'id = 1' ;
+        // condition = 'id = ' + req.params.id;
         // queryString += condition;
-        // // queryString += condition;
-        // console.log ("queryStrong: " + queryString);
-
-        // connection.query(queryString, function(err, result) {
-        //     if (err) {
-        //         throw err;
-        //     }
-
-        //     cb(result);
-        // });
+        queryString += objColVals;
+        console.log ("queryStrong: " + queryString);
+        console.log ("deleteOne branch 2: ");
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                console.log ("deleteOne branch 3: ");
+                console.log ("errorStrong: " + queryString);
+                throw err;
+            }
+console.log ("deleteOne branch 4: ");
+            cb(result);
+        });
     }
 };
 
