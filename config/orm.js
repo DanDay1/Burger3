@@ -45,6 +45,8 @@ var orm = {
         console.log(queryString);
 
         connection.query(queryString, function(err, result) {
+            console.log ("result for updateOne: " + result);
+            console.log ("xxxxx");
             cb(result);
         });
     },
@@ -71,7 +73,9 @@ var orm = {
                 throw err;
             }
 console.log ("deleteOne branch 4: ");
+console.log ("result: " + result);
             cb(result);
+            console.log ("deleteOne branch5");
         });
     }
 };

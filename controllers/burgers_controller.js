@@ -39,6 +39,7 @@ router.delete('/burgers/:id', function(req, res) {
   burger.deleteOne( 
     condition, function(data) {
     res.redirect("/");
+    //App worked fine with line 41 commented out
   });
 });
 
